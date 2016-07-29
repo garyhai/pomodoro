@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EBE96E61D4B8BB6006C5851 /* GettingThingsDoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE96E41D4B8BB6006C5851 /* GettingThingsDoneController.m */; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
 		698F4621133B5AF900311E34 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B9133B5AF900311E34 /* calendar.png */; };
 		698F4622133B5AF900311E34 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45BA133B5AF900311E34 /* compile.png */; };
@@ -257,6 +258,8 @@
 		2CCECF6C1396324D00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "it-IT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2CCECF6D1396326A00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "it-IT.lproj/splash.html"; sourceTree = "<group>"; };
 		2CCECF6E1396327C00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "it-IT.lproj/about.html"; sourceTree = "<group>"; };
+		4EBE96E41D4B8BB6006C5851 /* GettingThingsDoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GettingThingsDoneController.m; path = src/GettingThingsDoneController.m; sourceTree = "<group>"; };
+		4EBE96E51D4B8BB6006C5851 /* GettingThingsDoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GettingThingsDoneController.h; path = src/GettingThingsDoneController.h; sourceTree = "<group>"; };
 		691E986513769A3E00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/PomodoroTests/it-IT.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		698F45B8133B5AF900311E34 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		698F45B9133B5AF900311E34 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -998,6 +1001,8 @@
 		698F4690133B5D4A00311E34 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4EBE96E41D4B8BB6006C5851 /* GettingThingsDoneController.m */,
+				4EBE96E51D4B8BB6006C5851 /* GettingThingsDoneController.h */,
 				698F45EB133B5AF900311E34 /* CommonController.h */,
 				698F45EC133B5AF900311E34 /* CommonController.m */,
 				698F45FB133B5AF900311E34 /* PomodoroController.h */,
@@ -2403,6 +2408,7 @@
 				698F4651133B5AF900311E34 /* PomodoroController.m in Sources */,
 				698F4652133B5AF900311E34 /* PomodoroDefaults.m in Sources */,
 				698F4653133B5AF900311E34 /* PomodoroNotifier.m in Sources */,
+				4EBE96E61D4B8BB6006C5851 /* GettingThingsDoneController.m in Sources */,
 				698F4654133B5AF900311E34 /* Scripter.m in Sources */,
 				698F4655133B5AF900311E34 /* ShortcutController.m in Sources */,
 				698F4656133B5AF900311E34 /* SpeechController.m in Sources */,
