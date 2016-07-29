@@ -154,8 +154,8 @@
 	
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"calendarEnabled"];
 	[defaultValues setObject:@"Timers" forKey:@"selectedCalendar"];
-	[defaultValues setObject:NSLocalizedString(@"$duration minutes Timer '$timerName'", @"Calendar end text") forKey:@"calendarEnd"];
-
+//	[defaultValues setObject:NSLocalizedString(@"$duration minutes Timer '$timerName'", @"Calendar end text") forKey:@"calendarEnd"];
+    [defaultValues setObject:NSLocalizedString(@"$dailyPomodoroDone: $globalPomodoroDone $timerName", @"Calendar end text") forKey:@"calendarEnd"];
 		
 	[defaultValues setObject:NSLocalizedString(@"Insert here a name",@"Timer name prompt") forKey:@"timerName"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"startOnLoginEnabled"];
@@ -172,7 +172,9 @@
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"ichatEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"skypeEnabled"];
 	[defaultValues setObject:[NSNumber numberWithBool:NO] forKey:@"adiumEnabled"];
-    [defaultValues setObject:NSLocalizedString(@"Timer '$timerName'. Back at $dueTime", @"Mood Message") forKey:@"moodMessageInPomodoro"];
+//    [defaultValues setObject:NSLocalizedString(@"Timer '$timerName'. Back at $dueTime", @"Mood Message") forKey:@"moodMessageInPomodoro"];
+    [defaultValues setObject:NSLocalizedString(@"$timerName", @"Mood Message") forKey:@"moodMessageInPomodoro"];
+
     [defaultValues setObject:NSLocalizedString(@"Resting after Timer '$timerName'", @"Mood Message Break") forKey:@"moodMessageInPomodoroBreak"];
 
 
