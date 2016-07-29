@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4A72A81D4B942F007E533D /* getFromReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A72A61D4B942F007E533D /* getFromReminders.applescript */; };
+		4E4A72A91D4B942F007E533D /* addToReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A72A71D4B942F007E533D /* addToReminders.applescript */; };
 		4EBE96E61D4B8BB6006C5851 /* GettingThingsDoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE96E41D4B8BB6006C5851 /* GettingThingsDoneController.m */; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
 		698F4621133B5AF900311E34 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B9133B5AF900311E34 /* calendar.png */; };
@@ -258,6 +260,8 @@
 		2CCECF6C1396324D00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "it-IT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2CCECF6D1396326A00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "it-IT.lproj/splash.html"; sourceTree = "<group>"; };
 		2CCECF6E1396327C00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "it-IT.lproj/about.html"; sourceTree = "<group>"; };
+		4E4A72A61D4B942F007E533D /* getFromReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getFromReminders.applescript; sourceTree = "<group>"; };
+		4E4A72A71D4B942F007E533D /* addToReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addToReminders.applescript; sourceTree = "<group>"; };
 		4EBE96E41D4B8BB6006C5851 /* GettingThingsDoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GettingThingsDoneController.m; path = src/GettingThingsDoneController.m; sourceTree = "<group>"; };
 		4EBE96E51D4B8BB6006C5851 /* GettingThingsDoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GettingThingsDoneController.h; path = src/GettingThingsDoneController.h; sourceTree = "<group>"; };
 		691E986513769A3E00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/PomodoroTests/it-IT.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
@@ -961,6 +965,8 @@
 				DBD776D816604A63003F58B4 /* getActiveUrlsFromBrowsers.applescript */,
 				698F45D5133B5AF900311E34 /* insertIntoLoginItems.applescript */,
 				698F45D6133B5AF900311E34 /* removeFromLoginItems.applescript */,
+				4E4A72A61D4B942F007E533D /* getFromReminders.applescript */,
+				4E4A72A71D4B942F007E533D /* addToReminders.applescript */,
 				698F45D7133B5AF900311E34 /* setStatusToAvailableInAdium.applescript */,
 				698F45D8133B5AF900311E34 /* setStatusToAvailableInIChat.applescript */,
 				DB4C2A86166888A6000B2718 /* setStatusToAvailableInMessages.applescript */,
@@ -2398,10 +2404,12 @@
 				698F4645133B5AF900311E34 /* ApplescriptController.m in Sources */,
 				698F4646133B5AF900311E34 /* Binder.m in Sources */,
 				698F4647133B5AF900311E34 /* CalendarController.m in Sources */,
+				4E4A72A91D4B942F007E533D /* addToReminders.applescript in Sources */,
 				698F4648133B5AF900311E34 /* CalendarHelper.m in Sources */,
 				698F4649133B5AF900311E34 /* CommonController.m in Sources */,
 				698F464A133B5AF900311E34 /* DurationFormatter.m in Sources */,
 				698F464C133B5AF900311E34 /* GrowlController.m in Sources */,
+				4E4A72A81D4B942F007E533D /* getFromReminders.applescript in Sources */,
 				698F464E133B5AF900311E34 /* LoginController.m in Sources */,
 				698F464F133B5AF900311E34 /* Pomodoro.m in Sources */,
 				698F4650133B5AF900311E34 /* PomodoroArrayController.m in Sources */,
