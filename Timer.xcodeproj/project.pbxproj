@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ECB4AFB1D4CFE2D00B3C74D /* insertIntoLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D5133B5AF900311E34 /* insertIntoLoginItems.applescript */; };
+		4ECB4B171D4CFE3500B3C74D /* removeFromLoginItems.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 698F45D6133B5AF900311E34 /* removeFromLoginItems.applescript */; };
 		698F4620133B5AF900311E34 /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B8133B5AF900311E34 /* audio.png */; };
 		698F4621133B5AF900311E34 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45B9133B5AF900311E34 /* calendar.png */; };
 		698F4622133B5AF900311E34 /* compile.png in Resources */ = {isa = PBXBuildFile; fileRef = 698F45BA133B5AF900311E34 /* compile.png */; };
@@ -2310,6 +2312,8 @@
 				698F4634133B5AF900311E34 /* yellow.png in Resources */,
 				698F4642133B5AF900311E34 /* ring.wav in Resources */,
 				698F4643133B5AF900311E34 /* tick.wav in Resources */,
+				4ECB4AFB1D4CFE2D00B3C74D /* insertIntoLoginItems.applescript in Resources */,
+				4ECB4B171D4CFE3500B3C74D /* removeFromLoginItems.applescript in Resources */,
 				698F465A133B5AF900311E34 /* README.txt in Resources */,
 				698F465B133B5AF900311E34 /* ReleaseNotes.txt in Resources */,
 				69ED6384133B9D03003F59BA /* Stats.xib in Resources */,
