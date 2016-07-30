@@ -45,13 +45,28 @@
 	
 }
 
+- (NSString *) updateMoodMessage:(Pomodoro*) pomo forVariable:(NSString*)variable {
+    
+    NSDate* date = [NSDate date];  
+    NSDate* dueDate = [date dateByAddingTimeInterval:(pomo.durationMinutes * 60)];
+    
+    NSString* startedAt = [dateFormatter stringFromDate:date];
+    NSString* dueTime = [dateFormatter stringFromDate:dueDate];
+    
+    NSString* moodMessage = [self bindCommonVariables:variable];
+    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$startedAt" withString:startedAt];    
+    moodMessage = [moodMessage stringByReplacingOccurrencesOfString:@"$dueTime" withString:dueTime];
+    return moodMessage;
+    
+}
+
 #pragma mark ---- Pomodoro notifications methods ----
 
 -(void) setPomodoroNametoLastBeforeCancel:(NSNotification*)notification {
 	   
 	NSInteger howMany = [namesCombo numberOfItems];
 	if (howMany > 0) {
-		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"timerName"];
+		[[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"pomodoroName"];
 	}
     
 }
@@ -67,30 +82,84 @@
         i++;
     }
     if (isNewName) {
-        [scripter executeScript:@"addToReminders" withParameter:name];
+        
+        if (!([self checkDefault:@"thingsEnabled"]) && (![self checkDefault:@"omniFocusEnabled"]) && (![self checkDefault:@"remindersEnabled"])) {
+            if (howMany>15) {
+                [namesCombo removeItemAtIndex:0];
+            }
+            [namesCombo addItemWithObjectValue:name];
+        }
+        
+        if ([self checkDefault:@"thingsEnabled"] && [self checkDefault:@"thingsAddingEnabled"]) {
+            [scripter executeScript:@"addTodoToThings" withParameter:name];
+        }
+        if ([self checkDefault:@"omniFocusEnabled"] && [self checkDefault:@"omniFocusAddingEnabled"]) {
+            [scripter executeScript:@"addTodoToOmniFocus" withParameter:name];
+        }
+        [scripter executeScript:@"addTodoToReminders" withParameter:name];
     }
 }
 
 -(void) pomodoroWillStart:(NSNotification*) notification {
 
-    [namesCombo removeAllItems];
+    if (([self checkDefault:@"thingsEnabled"]) || ([self checkDefault:@"omniFocusEnabled"]) || ([self checkDefault:@"remindersEnabled"])) {
+        [namesCombo removeAllItems];
+    }
     
-    [self addListToCombo:@"getFromReminders"];
+    if ([self checkDefault:@"thingsEnabled"]) {
+        [self addListToCombo:@"getToDoListFromThings"];
+    }			
+    if ([self checkDefault:@"omniFocusEnabled"]) {
+        [self addListToCombo:@"getToDoListFromOmniFocus"];
+    }
+//    if ([self checkDefault:@"remindersEnabled"]) {
+        [self addListToCombo:@"getFromReminders"];
+//    }
 }
 
 -(void) pomodoroStarted:(NSNotification*) notification {
         
-//    NSString* moodMessage = _timerName;
+    Pomodoro* pomo = [notification object];
+
+    NSString* moodMessage = [self updateMoodMessage: pomo forVariable:@"moodMessageInPomodoro"];
     
-//	[scripter executeScript:@"setStatusToPomodoro" withParameter:moodMessage];
+	if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInAdium" withParameter:moodMessage];
+	}
+	
+	if ([self checkDefault:@"iChatEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInIChat" withParameter:moodMessage];
+	}
+    
+    if ([self checkDefault:@"messagesEnabled"]) {
+        [scripter executeScript:@"setStatusToPomodoroInMessages" withParameter:moodMessage];
+    }
+	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToPomodoroInSkype" withParameter:moodMessage];
+	}
 
 }
 
 - (void) setStatusToAvailable:(Pomodoro*) pomo {
     
-//    NSString* moodMessage = _timerName;
+    NSString* moodMessage = [self updateMoodMessage: pomo forVariable:@"moodMessageInPomodoroBreak"];
+    if ([self checkDefault:@"adiumEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInAdium" withParameter:moodMessage];
+	}
+	
+	if ([self checkDefault:@"iChatEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInIChat" withParameter:moodMessage];
+	}
+    
+    if ([self checkDefault:@"messagesEnabled"]) {
+        [scripter executeScript:@"setStatusToAvailableInMessages" withParameter:moodMessage];
+    }
+	
+	if ([self checkDefault:@"skypeEnabled"]) {
+		[scripter executeScript:@"setStatusToAvailableInSkype" withParameter:moodMessage];
+	}
 
-//    [scripter executeScript:@"setStatusToAvailable" withParameter:moodMessage];
 }
 
 -(void) pomodoroInterruptionMaxTimeIsOver:(NSNotification*) notification {
