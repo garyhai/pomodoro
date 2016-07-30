@@ -41,20 +41,20 @@
 	[defaultValues setObject: [NSNumber numberWithInt:4] forKey:@"pomodorosForLong"];
 	[defaultValues setObject: [NSNumber numberWithInt:5] forKey:@"longbreakResetTime"];
 
-	[defaultValues setObject: [NSNumber numberWithShort:29] forKey:@"muteCode"];
-	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"muteFlags"];
+//	[defaultValues setObject: [NSNumber numberWithShort:29] forKey:@"muteCode"];
+//	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"muteFlags"];
 	[defaultValues setObject: [NSNumber numberWithShort:126] forKey:@"startCode"];
 	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"startFlags"];
-	[defaultValues setObject: [NSNumber numberWithShort:125] forKey:@"resetCode"];
-	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resetFlags"];
-	[defaultValues setObject: [NSNumber numberWithShort:123] forKey:@"interruptCode"];
-	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"interruptFlags"];
-	[defaultValues setObject: [NSNumber numberWithShort:30] forKey:@"internalInterruptCode"];
-	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"internalInterruptFlags"];
-	[defaultValues setObject: [NSNumber numberWithShort:124] forKey:@"resumeCode"];
-	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resumeFlags"];
-	[defaultValues setObject: [NSNumber numberWithShort:44] forKey:@"quickStatsCode"];
-	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"quickStatsFlags"];
+	[defaultValues setObject: [NSNumber numberWithShort:125] forKey:@"finishCode"];
+	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"finishFlags"];
+//	[defaultValues setObject: [NSNumber numberWithShort:123] forKey:@"interruptCode"];
+//	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"interruptFlags"];
+//	[defaultValues setObject: [NSNumber numberWithShort:30] forKey:@"internalInterruptCode"];
+//	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:1835008] forKey:@"internalInterruptFlags"];
+//	[defaultValues setObject: [NSNumber numberWithShort:124] forKey:@"resumeCode"];
+//	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"resumeFlags"];
+//	[defaultValues setObject: [NSNumber numberWithShort:44] forKey:@"quickStatsCode"];
+//	[defaultValues setObject: [NSNumber numberWithUnsignedInteger:10223616] forKey:@"quickStatsFlags"];
 
 	[defaultValues setObject:NSLocalizedString(@"Have a great pomodoro! You have $duration minutes to do '$timerName'.",@"Growl pomodoro start") forKey:@"growlStart"];
 	[defaultValues setObject:NSLocalizedString(@"Ready, set, go",@"Speech pomodoro start") forKey:@"speechStart"];

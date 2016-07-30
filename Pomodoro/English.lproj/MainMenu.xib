@@ -103,6 +103,7 @@
         <customObject id="1220" userLabel="Short Cut Controller" customClass="ShortcutController">
             <connections>
                 <outlet property="delegate" destination="9" id="1237"/>
+                <outlet property="finishRecorder" destination="RLD-cC-tkM" id="pYR-U8-cMO"/>
                 <outlet property="internalInterruptRecorder" destination="283" id="1233"/>
                 <outlet property="interruptRecorder" destination="282" id="1232"/>
                 <outlet property="muteRecorder" destination="279" id="1229"/>
@@ -2689,35 +2690,35 @@ DQ
                                             </connections>
                                         </customView>
                                         <customView id="281" customClass="SRRecorderControl">
-                                            <rect key="frame" x="337" y="378" width="163" height="22"/>
+                                            <rect key="frame" x="337" y="335" width="163" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="1220" id="1223"/>
                                             </connections>
                                         </customView>
                                         <customView id="282" customClass="SRRecorderControl">
-                                            <rect key="frame" x="337" y="328" width="163" height="22"/>
+                                            <rect key="frame" x="337" y="285" width="163" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="1220" id="1224"/>
                                             </connections>
                                         </customView>
                                         <customView id="283" customClass="SRRecorderControl">
-                                            <rect key="frame" x="337" y="278" width="163" height="22"/>
+                                            <rect key="frame" x="337" y="235" width="163" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="1220" id="1225"/>
                                             </connections>
                                         </customView>
                                         <customView id="284" customClass="SRRecorderControl">
-                                            <rect key="frame" x="337" y="228" width="163" height="22"/>
+                                            <rect key="frame" x="337" y="185" width="163" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="1220" id="1226"/>
                                             </connections>
                                         </customView>
                                         <customView id="285" customClass="SRRecorderControl">
-                                            <rect key="frame" x="337" y="178" width="163" height="22"/>
+                                            <rect key="frame" x="337" y="135" width="163" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="1220" id="1227"/>
@@ -2742,7 +2743,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="297">
-                                            <rect key="frame" x="166" y="378" width="108" height="17"/>
+                                            <rect key="frame" x="166" y="335" width="108" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reset Timer" id="298">
                                                 <font key="font" metaFont="system"/>
@@ -2751,7 +2752,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="301">
-                                            <rect key="frame" x="166" y="328" width="116" height="17"/>
+                                            <rect key="frame" x="166" y="285" width="116" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="External Interrupt" id="302">
                                                 <font key="font" metaFont="system"/>
@@ -2760,7 +2761,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="303">
-                                            <rect key="frame" x="166" y="278" width="116" height="17"/>
+                                            <rect key="frame" x="166" y="235" width="116" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Internal Interrupt" id="304">
                                                 <font key="font" metaFont="system"/>
@@ -2769,7 +2770,7 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="305">
-                                            <rect key="frame" x="166" y="228" width="123" height="17"/>
+                                            <rect key="frame" x="166" y="185" width="123" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Resume Timer" id="306">
                                                 <font key="font" metaFont="system"/>
@@ -2778,9 +2779,25 @@ DQ
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="307">
-                                            <rect key="frame" x="166" y="178" width="116" height="17"/>
+                                            <rect key="frame" x="166" y="135" width="116" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Quick Statistics" id="308">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <customView id="RLD-cC-tkM" customClass="SRRecorderControl">
+                                            <rect key="frame" x="337" y="381" width="163" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="1220" id="LNW-nH-8CH"/>
+                                            </connections>
+                                        </customView>
+                                        <textField verticalHuggingPriority="750" id="Qb1-jq-HGg">
+                                            <rect key="frame" x="166" y="381" width="108" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Force Complete" id="UzK-aI-Emp">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

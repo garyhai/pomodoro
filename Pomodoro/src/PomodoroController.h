@@ -112,6 +112,7 @@
 
 -(void) keyMute;
 -(void) keyStart;
+-(void) keyFinish;
 -(void) keyReset;
 -(void) keyInterrupt;
 -(void) keyInternalInterrupt;

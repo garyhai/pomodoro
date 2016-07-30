@@ -35,6 +35,7 @@
     
     IBOutlet SRRecorderControl* muteRecorder;
     IBOutlet SRRecorderControl* startRecorder;
+    IBOutlet SRRecorderControl* finishRecorder;
     IBOutlet SRRecorderControl* resetRecorder;
     IBOutlet SRRecorderControl* interruptRecorder;
     IBOutlet SRRecorderControl* internalInterruptRecorder;
@@ -43,6 +44,7 @@
 	
 	PTHotKey *muteKey;
 	PTHotKey *startKey;
+    PTHotKey *finishKey;
 	PTHotKey *resetKey;
 	PTHotKey *interruptKey;
 	PTHotKey *internalInterruptKey;
@@ -51,6 +53,7 @@
 	
 	KeyCombo muteKeyCombo;
 	KeyCombo startKeyCombo;
+    KeyCombo finishKeyCombo;
 	KeyCombo resetKeyCombo;
 	KeyCombo interruptKeyCombo;
 	KeyCombo internalInterruptKeyCombo;
@@ -62,6 +65,7 @@
 
 @property (assign) IBOutlet SRRecorderControl* muteRecorder;
 @property (assign) IBOutlet SRRecorderControl* startRecorder;
+@property (assign) IBOutlet SRRecorderControl* finishRecorder;
 @property (assign) IBOutlet SRRecorderControl* resetRecorder;
 @property (assign) IBOutlet SRRecorderControl* interruptRecorder;
 @property (assign) IBOutlet SRRecorderControl* internalInterruptRecorder;

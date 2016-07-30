@@ -31,7 +31,7 @@
 
 @implementation ShortcutController
 
-@synthesize delegate, startRecorder, interruptRecorder, internalInterruptRecorder, muteRecorder, quickStatsRecorder, resetRecorder, resumeRecorder;
+@synthesize delegate, startRecorder, finishRecorder, interruptRecorder, internalInterruptRecorder, muteRecorder, quickStatsRecorder, resetRecorder, resumeRecorder;
 
 #pragma mark - Shortcut recorder callbacks & support
 
@@ -61,6 +61,8 @@
 		[self switchKey:@"mute" forKey:&muteKey withMethod:@selector(keyMute) withRecorder:aRecorder];
 	} else if (aRecorder == startRecorder) {
 		[self switchKey:@"start" forKey:&startKey withMethod:@selector(keyStart) withRecorder:aRecorder];
+    } else if (aRecorder == finishRecorder) {
+        [self switchKey:@"finish" forKey:&finishKey withMethod:@selector(keyFinish) withRecorder:aRecorder];
 	} else if (aRecorder == resetRecorder) {
 		[self switchKey:@"reset" forKey:&resetKey withMethod:@selector(keyReset) withRecorder:aRecorder];
 	} else if (aRecorder == interruptRecorder) {
@@ -80,6 +82,8 @@
 	muteKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"muteFlags"] intValue];
 	startKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"startCode"] intValue];
 	startKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"startFlags"] intValue];
+    finishKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"finishCode"] intValue];
+    finishKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"finishFlags"] intValue];
 	resetKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resetCode"] intValue];
 	resetKeyCombo.flags = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resetFlags"] intValue];
 	interruptKeyCombo.code = [[[NSUserDefaults standardUserDefaults] objectForKey:@"interruptCode"] intValue];
@@ -93,6 +97,7 @@
     
 	[muteRecorder setKeyCombo:muteKeyCombo];
 	[startRecorder setKeyCombo:startKeyCombo];
+    [finishRecorder setKeyCombo:finishKeyCombo];
 	[resetRecorder setKeyCombo:resetKeyCombo];
 	[interruptRecorder setKeyCombo:interruptKeyCombo];
 	[internalInterruptRecorder setKeyCombo:internalInterruptKeyCombo];
@@ -108,6 +113,10 @@
 
 -(void) keyStart {
     [delegate keyStart];	
+}
+
+-(void) keyFinish {
+    [delegate keyFinish];
 }
 
 -(void) keyReset {
@@ -145,6 +154,7 @@
     
     [muteKey release];
 	[startKey release];
+    [finishKey release];
 	[resetKey release];
 	[interruptKey release];
     [internalInterruptKey release];

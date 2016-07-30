@@ -145,6 +145,10 @@
 	if ([self.startPomodoro isEnabled]) [self start:nil];
 }
 
+-(void) keyFinish {
+    if ([self.finishPomodoro isEnabled]) [self finish:nil];
+}
+
 -(void) keyReset {
 	if ([self.invalidatePomodoro isEnabled]) [self reset:nil];
 }
