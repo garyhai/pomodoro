@@ -224,6 +224,10 @@
         i++;
     }
     if (isNewName) {
+        if (howMany>25) {
+            [namesCombo removeItemAtIndex:0];
+        }
+        [namesCombo addItemWithObjectValue:name];
         
         if ([self checkDefault:@"scriptSaveTodoEnabled"]) {
             NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptSaveTodo"]] autorelease];

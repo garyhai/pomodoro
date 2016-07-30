@@ -295,7 +295,7 @@
         [namePanel endEditingFor:nil];
     }
     
-    [self updateNamesComboData];
+//    [self updateNamesComboData];
     [[NSNotificationCenter defaultCenter] postNotificationName:_PMPomoNameGiven object:namePanel];
 
 	[namePanel close];
