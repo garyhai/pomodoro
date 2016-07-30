@@ -26,6 +26,8 @@
 #import "ApplescriptController.h"
 #import <OSAKit/OSAScriptView.h>
 //#import <OSAKit/OSAScriptController.h>
+#import "PomoNotifications.h"
+
 
 @implementation ApplescriptController
 
@@ -91,7 +93,6 @@
     [notification.object makeFirstResponder:nil];
     
 }
-
 
 #pragma mark ---- Pomodoro notifications methods ----
 
@@ -195,14 +196,69 @@
 
 }
 
+- (void) addListToCombo:(NSAppleEventDescriptor*)result {
+    
+    NSInteger howMany = [result numberOfItems];
+    for (int i=1; i<= howMany; i++) {
+        [namesCombo addItemWithObjectValue:[[result descriptorAtIndex:i] stringValue]];
+    }
+}
+
+-(void) setPomodoroNametoLastBeforeCancel:(NSNotification*)notification {
+	   
+    NSInteger howMany = [namesCombo numberOfItems];
+    if (howMany > 0) {
+        [[NSUserDefaults standardUserDefaults] setObject:[namesCombo itemObjectValueAtIndex:howMany-1] forKey:@"timerName"];
+    }
+    
+}
+
+-(void) pomodoroNameGiven:(NSNotification*) notification {
+    
+    NSInteger howMany = [namesCombo numberOfItems];
+    NSString* name = _timerName;
+    BOOL isNewName = YES;
+    NSInteger i = 0;
+    while ((isNewName) && (i<howMany)) {
+        isNewName = ![name isEqualToString:[namesCombo itemObjectValueAtIndex:i]];
+        i++;
+    }
+    if (isNewName) {
+        
+        if ([self checkDefault:@"scriptToRemindersEnabled"]) {
+            NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptToReminders"]] autorelease];
+            
+            [playScript executeAndReturnError:nil];
+        }
+    }
+}
+
+-(void) pomodoroWillStart:(NSNotification*) notification {
+    
+    if ([self checkDefault:@"scriptFromRemindersEnabled"]) {
+        [namesCombo removeAllItems];
+
+        NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptFromReminders"]] autorelease];
+        
+        NSAppleEventDescriptor* result = [playScript executeAndReturnError:nil];
+        [self addListToCombo: result];
+    }
+
+}
+
+
 
 #pragma mark ---- Lifecycle methods ----
 
 - (void)awakeFromNib {
     
     [self registerForAllPomodoroEvents];
+    [self registerForPomodoro:_PMPomoNameCanceled method:@selector(setPomodoroNametoLastBeforeCancel:)];
+    [self registerForPomodoro:_PMPomoNameGiven method:@selector(pomodoroNameGiven:)];
+    [self registerForPomodoro:_PMPomoWillStart method:@selector(pomodoroWillStart:)];
+
     
-    scriptNames = [[NSArray arrayWithObjects:@"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
+    scriptNames = [[NSArray arrayWithObjects:@"FromReminders", @"ToReminders", @"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
     
     [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
     [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];

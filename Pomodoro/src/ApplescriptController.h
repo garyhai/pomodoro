@@ -33,6 +33,7 @@
     IBOutlet NSPanel* scriptPanel;
     IBOutlet OSAScriptView* scriptView;
     IBOutlet NSComboBox* scriptEveryCombo;
+    IBOutlet NSComboBox* namesCombo;
 
     NSArray* scriptNames;
 
@@ -41,6 +42,8 @@
 @property (assign) IBOutlet NSPanel* scriptPanel;
 @property (assign) IBOutlet OSAScriptView* scriptView;
 @property (assign) IBOutlet NSComboBox* scriptEveryCombo;
+@property (assign) IBOutlet NSComboBox* namesCombo;
+
 
 -(IBAction) showOpenPanel:(id)sender;
 -(IBAction) showScriptingPanel:(id)sender;
