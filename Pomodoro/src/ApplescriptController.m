@@ -31,7 +31,7 @@
 
 @implementation ApplescriptController
 
-@synthesize scriptView, scriptPanel, scriptEveryCombo;
+@synthesize scriptView, scriptPanel, scriptEveryCombo, namesCombo;
 
 #pragma mark ---- Scripting panel delegate methods ----
 
@@ -225,8 +225,8 @@
     }
     if (isNewName) {
         
-        if ([self checkDefault:@"scriptToRemindersEnabled"]) {
-            NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptToReminders"]] autorelease];
+        if ([self checkDefault:@"scriptSaveTodoEnabled"]) {
+            NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptSaveTodo"]] autorelease];
             
             [playScript executeAndReturnError:nil];
         }
@@ -235,10 +235,10 @@
 
 -(void) pomodoroWillStart:(NSNotification*) notification {
     
-    if ([self checkDefault:@"scriptFromRemindersEnabled"]) {
+    if ([self checkDefault:@"scriptGetTodoListEnabled"]) {
         [namesCombo removeAllItems];
 
-        NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptFromReminders"]] autorelease];
+        NSAppleScript *playScript = [[[NSAppleScript alloc] initWithSource:[self bindCommonVariables:@"scriptGetTodoList"]] autorelease];
         
         NSAppleEventDescriptor* result = [playScript executeAndReturnError:nil];
         [self addListToCombo: result];
@@ -258,7 +258,7 @@
     [self registerForPomodoro:_PMPomoWillStart method:@selector(pomodoroWillStart:)];
 
     
-    scriptNames = [[NSArray arrayWithObjects:@"FromReminders", @"ToReminders", @"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
+    scriptNames = [[NSArray arrayWithObjects:@"GetTodoList", @"SaveTodo", @"Start",@"Interrupt",@"InterruptOver", @"Reset", @"Resume", @"End", @"BreakFinished", @"Every", nil] retain];
     
     [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:2]];
     [scriptEveryCombo addItemWithObjectValue: [NSNumber numberWithInt:5]];
