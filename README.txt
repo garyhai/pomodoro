@@ -11,9 +11,84 @@ It's inspired by the Pomodoro Technique (http://www.pomodorotechnique.com/)
 Updates, source code, new releases, manual and fixes on http://martakostova.github.io/timer
 
 ----------
+Examples of scripts
+----------
+
+## Predefined variables in scriple
+
+* $timerName : Name of pomodoro.
+* $duration : Current pomodoro duration.
+* $dailyPomodoroDone : How many pomodoros finished today.
+* $globalPomodoroDone : Count of finished pomodoros in all time.
+
+## Cowork with Reminders
+
+Fill pomodoro todo list from Reminders' Inbox list:
+in script "Get Todo List":
+
+```
+tell application "Reminders"
+    tell list "Inbox"
+        get name of every reminder whose completed is false
+    end tell
+end tell
+```
+
+Save new todo from pomodoro to Reminders' Inbox list:
+in script "Save Todo"
+
+```
+tell application "Reminders"
+    tell list "Inbox"
+        make new reminder with properties {name:"$timerName", remind me date:(current date) + 1 * days}
+    end tell
+end tell
+```
+
+## Cowork with Evernote
+
+in script "Start":
+
+```
+tell application id "com.evernote.Evernote"
+    set myNote to find note "Evernote Note classic link to log pomodors, right click the note with options key down then copy it"
+    try
+        append myNote html "<br>"
+    on error
+        set HTML content of myNote to HTML content of myNote
+        append myNote html "<br>"
+    end try
+    set textToAdd to "<ul><li>" & (current date) & "</li></ul>" & "<dl><dt>$timerName</dt></dl>"
+    append myNote html textToAdd
+end tell
+```
+
+in script "End":
+
+```
+set resAlert to display alert "All work and no play makes Jack a dull boy" buttons {"Close", "Memo"} giving up after 10
+if button returned of resAlert is "Memo" then
+    set resDlg to display dialog "Take a note:" buttons {"Close", "Submit"} default answer "" default button "Submit" with title "$timerName"
+    set memo to text returned of resDlg
+    if button returned of resDlg is "Submit" and memo is not "" then
+        tell application id "com.evernote.Evernote"
+            set noteLink to "evernote note classic link"
+            set myNote to find note noteLink
+            set textToAdd to "&nbsp;&nbsp;Memo: " & memo
+            set noteContents to HTML content of myNote
+            set fullHtmlContent to noteContents & textToAdd
+            set HTML content of myNote to fullHtmlContent
+        end tell
+    end if
+end if
+
+```
+
+----------
 Developers
 ----------
 
+Maintaining Developer: Gary Hai
 Maintaining Developer: Marta Kostova
 Developed by Ugo Landini and Pascal Bihler
  
