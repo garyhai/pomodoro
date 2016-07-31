@@ -51,20 +51,7 @@ static EKEventStore *eventStore = nil;
             }
         }
         
-    } else {
-        // 10.8 style
-        eventStore = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent ];
-        
-        NSArray* cals = [eventStore calendarsForEntityType:EKEntityTypeEvent            ];
-        
-        for (EKCalendar* calendar in cals){
-            [calendarsCombo addItemWithObjectValue:[calendar title]];
-            if ([[calendar title] isEqual:_selectedCalendar]){
-                [calendarsCombo selectItemWithObjectValue:[calendar title]];
-            }
-        }
     }
-
 }
 
 #pragma mark ---- Pomodoro notifications methods ----

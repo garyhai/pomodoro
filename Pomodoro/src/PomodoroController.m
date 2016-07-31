@@ -511,7 +511,7 @@
 	}
     
     if ([self checkDefault:@"preventSleepDuringPomodoroBreak"]) {
-        UpdateSystemActivity(OverallAct);
+//Do nothing        UpdateSystemActivity(OverallAct);
     }
     
 }
@@ -525,7 +525,7 @@
 	}
     
     if ([self checkDefault:@"preventSleepDuringPomodoro"]) {
-        UpdateSystemActivity(OverallAct);
+//Do nothing        UpdateSystemActivity(OverallAct);
     }
 
 	
@@ -613,7 +613,7 @@
 	stats = [[StatsController alloc] init];
 	[stats window];
 
-	GetCurrentProcess(&psn);
+//	GetCurrentProcess(&psn);
     
 	[self observeUserDefault:@"ringVolume"];
 	[self observeUserDefault:@"ringBreakVolume"];

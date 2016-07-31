@@ -45,7 +45,7 @@
 	NSAttributedString* aboutHtml = [[[NSAttributedString alloc] initWithHTML:[aboutString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil] autorelease];
 	[aboutText setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
 									  [NSColor whiteColor], NSForegroundColorAttributeName,nil]];
-	[aboutText insertText:aboutHtml];
+    [aboutText insertText:aboutHtml replacementRange:NSMakeRange(NSNotFound, 0)];
 	[aboutText setEditable:NO];
 	
 }

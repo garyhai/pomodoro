@@ -62,7 +62,7 @@
     NSOpenPanel *panel = [NSOpenPanel openPanel]; 
 	[panel setDelegate:self];
     [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"pomo", @"applescript", nil]];
-    [panel beginSheetModalForWindow:scriptPanel completionHandler:0];
+    [panel beginSheetModalForWindow:scriptPanel completionHandler:^(NSInteger result) {}];
     /*[panel beginSheetForDirectory:nil
                              file:nil 
 							types: [NSArray arrayWithObjects:@"pomo", @"applescript",nil]
