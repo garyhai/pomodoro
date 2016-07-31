@@ -246,8 +246,8 @@
 }
 
 -(IBAction)setup:(id)sender {
-	
 	[prefs makeKeyAndOrderFront:self];
+    [self setFocusOnPomodoro];
 }
 
 -(IBAction)stats:(id)sender {
@@ -303,7 +303,9 @@
 }
 
 - (void) setFocusOnPomodoro {
-	SetFrontProcess(&psn);
+//	SetFrontProcess(&psn);
+    // Make us the active application
+    [NSApp activateIgnoringOtherApps:YES];
 }
 
 - (IBAction) start: (id) sender {

@@ -16,33 +16,22 @@
         </customObject>
         <menu title="Menu principale" systemMenu="main" id="1">
             <items>
-                <menuItem title="Modifica" id="2">
+                <menuItem title="File" id="GDn-o7-HBb">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Modifica" id="3">
+                    <menu key="submenu" title="File" id="MQx-Ik-iWV">
                         <items>
-                            <menuItem title="Taglia" keyEquivalent="x" id="4">
+                            <menuItem isSeparatorItem="YES" id="Iff-o9-QZS"/>
+                            <menuItem title="Close" keyEquivalent="w" id="BXX-UO-Oho">
                                 <connections>
-                                    <action selector="cut:" target="-1" id="45"/>
+                                    <action selector="performClose:" target="-1" id="VXI-5Z-eCf"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Copia" keyEquivalent="c" id="5">
+                            <menuItem title="Quit" keyEquivalent="q" id="iBm-pW-WK0">
                                 <connections>
-                                    <action selector="copy:" target="-1" id="46"/>
+                                    <action selector="quit:" target="-1" id="xM0-Ki-xZF"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Incolla" keyEquivalent="v" id="6">
-                                <connections>
-                                    <action selector="paste:" target="-1" id="47"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Incolla e mantieni lo stile" keyEquivalent="V" id="7">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Seleziona tutto" keyEquivalent="a" id="8">
-                                <connections>
-                                    <action selector="selectAll:" target="-1" id="48"/>
-                                </connections>
-                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="uZH-Mk-LAL"/>
                         </items>
                     </menu>
                 </menuItem>
@@ -2995,6 +2984,84 @@ DQ
             </connections>
             <point key="canvasLocation" x="353" y="346"/>
         </window>
+        <menuItem title="Modifica" id="2">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <menu key="submenu" title="Modifica" id="3">
+                <items>
+                    <menuItem title="Taglia" keyEquivalent="x" id="4">
+                        <connections>
+                            <action selector="cut:" target="-1" id="45"/>
+                        </connections>
+                    </menuItem>
+                    <menuItem title="Copia" keyEquivalent="c" id="5">
+                        <connections>
+                            <action selector="copy:" target="-1" id="46"/>
+                        </connections>
+                    </menuItem>
+                    <menuItem title="Incolla" keyEquivalent="v" id="6">
+                        <connections>
+                            <action selector="paste:" target="-1" id="47"/>
+                        </connections>
+                    </menuItem>
+                    <menuItem title="Incolla e mantieni lo stile" keyEquivalent="V" id="7">
+                        <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                    </menuItem>
+                    <menuItem title="Seleziona tutto" keyEquivalent="a" id="8">
+                        <connections>
+                            <action selector="selectAll:" target="-1" id="48"/>
+                        </connections>
+                    </menuItem>
+                </items>
+            </menu>
+        </menuItem>
+        <menuItem title="New" keyEquivalent="n" id="UE2-t8-0LO">
+            <connections>
+                <action selector="newDocument:" target="-1" id="vYB-ie-4ID"/>
+            </connections>
+        </menuItem>
+        <menuItem title="Open…" keyEquivalent="o" id="hV1-XC-DIg">
+            <connections>
+                <action selector="openDocument:" target="-1" id="Qe0-89-ioi"/>
+            </connections>
+        </menuItem>
+        <menuItem title="Open Recent" id="dGE-sm-HZF">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="FDw-eS-Xea">
+                <items>
+                    <menuItem title="Clear Menu" id="UPc-Y8-Y6B">
+                        <connections>
+                            <action selector="clearRecentDocuments:" target="-1" id="7gG-n6-dKA"/>
+                        </connections>
+                    </menuItem>
+                </items>
+            </menu>
+        </menuItem>
+        <menuItem title="Save" keyEquivalent="s" id="wcf-Td-zIj">
+            <connections>
+                <action selector="saveDocument:" target="-1" id="12x-4N-Gex"/>
+            </connections>
+        </menuItem>
+        <menuItem title="Save As…" keyEquivalent="S" id="69E-tI-9nm">
+            <connections>
+                <action selector="saveDocumentAs:" target="-1" id="leG-wj-Hhb"/>
+            </connections>
+        </menuItem>
+        <menuItem title="Revert to Saved" id="SGH-R1-4Vq">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="revertDocumentToSaved:" target="-1" id="I79-TV-vxc"/>
+            </connections>
+        </menuItem>
+        <menuItem title="Page Setup…" keyEquivalent="P" id="SE9-FP-x5l">
+            <connections>
+                <action selector="runPageLayout:" target="-1" id="Phv-wQ-oBq"/>
+            </connections>
+        </menuItem>
+        <menuItem title="Quit" keyEquivalent="q" id="sqG-Y1-3RS">
+            <connections>
+                <action selector="print:" target="-1" id="vLP-9v-r1G"/>
+            </connections>
+        </menuItem>
     </objects>
     <resources>
         <image name="NSAdvanced" width="32" height="32"/>
