@@ -52,7 +52,6 @@
 		698F4656133B5AF900311E34 /* SpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F4607133B5AF900311E34 /* SpeechController.m */; };
 		698F4657133B5AF900311E34 /* SplashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F4609133B5AF900311E34 /* SplashController.m */; };
 		698F4658133B5AF900311E34 /* StatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F460B133B5AF900311E34 /* StatsController.m */; };
-		698F465A133B5AF900311E34 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 698F460F133B5AF900311E34 /* README.txt */; };
 		698F465B133B5AF900311E34 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 698F4610133B5AF900311E34 /* ReleaseNotes.txt */; };
 		698F46E9133B601500311E34 /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E2133B601500311E34 /* PTHotKey.m */; };
 		698F46EA133B601500311E34 /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 698F46E4133B601500311E34 /* PTHotKeyCenter.m */; };
@@ -259,6 +258,7 @@
 		2CCECF6C1396324D00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "it-IT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2CCECF6D1396326A00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "it-IT.lproj/splash.html"; sourceTree = "<group>"; };
 		2CCECF6E1396327C00A8608F /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "it-IT"; path = "it-IT.lproj/about.html"; sourceTree = "<group>"; };
+		4EDDD02A1D4FA0290037B1DF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		691E986513769A3E00D2A31E /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "it-IT"; path = "/Users/ugol/Documents/Source/objective/Pomodoro/PomodoroTests/it-IT.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		698F45B8133B5AF900311E34 /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		698F45B9133B5AF900311E34 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -336,7 +336,6 @@
 		698F4609133B5AF900311E34 /* SplashController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashController.m; path = src/SplashController.m; sourceTree = "<group>"; };
 		698F460A133B5AF900311E34 /* StatsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatsController.h; path = src/StatsController.h; sourceTree = "<group>"; };
 		698F460B133B5AF900311E34 /* StatsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatsController.m; path = src/StatsController.m; sourceTree = "<group>"; };
-		698F460F133B5AF900311E34 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		698F4610133B5AF900311E34 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
 		698F46E1133B601500311E34 /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTHotKey.h; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.h; sourceTree = SOURCE_ROOT; };
 		698F46E2133B601500311E34 /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTHotKey.m; path = externalFw/shortcutrecorder/Demo/HotKey/PTHotKey.m; sourceTree = SOURCE_ROOT; };
@@ -1132,8 +1131,8 @@
 		69AE95D8133B4705004DC14D = {
 			isa = PBXGroup;
 			children = (
+				4EDDD02A1D4FA0290037B1DF /* README.md */,
 				C137DD61188ACA4500D9C13F /* externalFw */,
-				698F460F133B5AF900311E34 /* README.txt */,
 				698F4610133B5AF900311E34 /* ReleaseNotes.txt */,
 				698F4713133B719900311E34 /* Dependencies */,
 				69AE95ED133B4705004DC14D /* Pomodoro */,
@@ -2314,7 +2313,6 @@
 				698F4643133B5AF900311E34 /* tick.wav in Resources */,
 				4ECB4AFB1D4CFE2D00B3C74D /* insertIntoLoginItems.applescript in Resources */,
 				4ECB4B171D4CFE3500B3C74D /* removeFromLoginItems.applescript in Resources */,
-				698F465A133B5AF900311E34 /* README.txt in Resources */,
 				698F465B133B5AF900311E34 /* ReleaseNotes.txt in Resources */,
 				69ED6384133B9D03003F59BA /* Stats.xib in Resources */,
 				69ED638D133B9D12003F59BA /* About.xib in Resources */,
