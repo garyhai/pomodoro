@@ -49,6 +49,10 @@
 	NSString* durationString = [[[NSUserDefaults standardUserDefaults] objectForKey:@"initialTime"] stringValue];
 	NSString* dailyPomodoroDone = [[[NSUserDefaults standardUserDefaults] objectForKey:@"dailyPomodoroDone"] stringValue];
 	NSString* globalPomodoroDone = [[[NSUserDefaults standardUserDefaults] objectForKey:@"globalPomodoroDone"] stringValue];
+    NSString* timerName = [[NSUserDefaults standardUserDefaults] objectForKey:@"timerName"];
+    
+    timerName = [timerName stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+
 	
 	if (nil == dailyPomodoroDone) {
 		dailyPomodoroDone = @"0";
@@ -58,7 +62,7 @@
 		globalPomodoroDone = @"0";
 	}
     
-	NSArray* values = [NSArray arrayWithObjects:[[NSUserDefaults standardUserDefaults] objectForKey:@"timerName"], durationString, dailyPomodoroDone, globalPomodoroDone, nil];
+	NSArray* values = [NSArray arrayWithObjects:timerName, durationString, dailyPomodoroDone, globalPomodoroDone, nil];
 	return [Binder substituteDefault:name withVariables:variables andValues:values];
 }	
 
