@@ -1,6 +1,10 @@
 -------------
 Release Notes
 -------------
+2.2.3
+- Fix bug of applescript error when quotation marks in $timerName.
+- Make build number auto increased.
+
 2.2.2
 - Add "Get Todo List" script snippet.
 - Add "Save Todo" script snippet.
